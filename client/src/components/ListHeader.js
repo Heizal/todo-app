@@ -2,8 +2,7 @@ import Modal from "./Modal";
 import { useState } from "react";
 
 // Destructure prop: listName
-const ListHeader = ({listName}) => {
-
+const ListHeader = ({listName, getData}) => {
     const [showModal, setShowModal] = useState(false)
 
     //signOut functional expression
@@ -19,7 +18,7 @@ const ListHeader = ({listName}) => {
           <button className="create" onClick={()=>setShowModal(true)}>Add new</button>
           <button className="signout" onClick={signOut}>Sign out</button>
         </div>
-        {showModal && <Modal mode={'create'} setShowModal = {setShowModal}/>}
+        {showModal && <Modal mode={'create'} setShowModal = {setShowModal} getData={getData}/>}
       </div>
     );
   }

@@ -32,9 +32,9 @@ const App = () => {
   return (
     <div className='app'>
       {/* listName is a prop */}
-      <ListHeader listName= {'🏝️  Holiday tick list'}/>
+      <ListHeader listName= {'🏝️  Holiday tick list'} getData={getData}/>
       {/* Map sorted tasks to ListItems*/}
-      {sortedTasks?.map((task) => <ListItem  key={task.id} task={task} />)}
+      {sortedTasks?.map((task) => <ListItem  key={task.id} task={task} getData={getData} />)}
     </div>
   );
 }
