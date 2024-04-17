@@ -17,7 +17,7 @@ body{
 
 }
 
-.button-container{
+.button-container, .info-container{
     display: flex;
     align-items: center;
 
@@ -40,4 +40,95 @@ body{
     border-bottom: rgb(0, 0, 0, 0.05) 1px solid;
 
 
+}
+
+/* buttons */
+.edit{
+    border: 1.5px solid rgb(141, 181, 145);
+    color: rgb(141, 181, 145);
+    background-color: transparent;
+    text-transform: uppercase;
+}
+
+.edit:hover{
+    background-color: rgb(182,223, 186);
+}
+
+.edit:active{
+    color: rgb(255,255,255);
+    background-color: rgb(141,181,145);
+}
+
+.delete{
+    border: 1.5px solid rgb(255, 175, 163);
+    color: rgb(255, 175, 163);
+    text-transform: uppercase;
+}
+
+.delete:hover{
+    background-color: rgb(255,201,193);
+}
+
+.delete:active{
+    background-color: rgb(255,175,163);
+    color: white;
+
+}
+
+
+.create{
+    border: 1.5px solid rgb(108,115,148);
+    color: rgb(108,115,148);
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.create:hover{
+    background-color: rgb(131, 138, 172);
+}
+
+.create:active…{
+    background-color: rgb(108,115,148);
+    color: white;
+}
+
+.signout{
+    border: 1.5px solid rgb(255, 175, 163);
+    background-color: rgb(255, 175, 163) !important;
+    color: rgb(234,234,234);
+}
+
+.signout:hover{
+    background-color: rgb(175,94,94) !important;
+    border: 1.5px solid rgb(175,94,94);
+}
+
+.signout:active{
+    border: 1.5px solid rgb(175,81,81) !important;
+    background-color: rgb(175,81,81) !important;
+    color: white;
+}
+
+
+
+
+
+
+/* List Item */
+.list-item{
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0, 0.08) 0 0 0 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tick{
+    padding: 10px;
+}
+
+.tick path{
+    stroke-miterlimit: 10;
+    stroke-width: 32px;
 }
