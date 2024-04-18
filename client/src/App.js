@@ -1,12 +1,18 @@
 import ListHeader from './components/ListHeader'
 import ListItem from './components/ListItem'
+import Auth from './components/Auth'
 import {useEffect, useState} from 'react'
+import {useCookies} from 'react-cookie'
 
 const App = () => {
-  const userEmail = 'heizal@test.com'
-
+  const [cookies, setCookie, removeCookie] = useCookies(null)
+  // Save authToken and email cookies
+  const authToken = cookies.AuthToken
+  const userEmail = cookies.Email
   // save json to the frontend
   const [tasks, setTasks] = useState(null)
+
+  // Authorisation
 
   const getData = async () =>{
     try{
@@ -18,8 +24,13 @@ const App = () => {
       console.error(err)
     }
   }
+  
+  useEffect(() =>  {
+    if (authToken){
+      getData()
+    }
 
-  useEffect(() =>  getData, [])
+  }, [])
 
   console.log(tasks)
 
@@ -31,10 +42,16 @@ const App = () => {
 
   return (
     <div className='app'>
-      {/* listName is a prop */}
-      <ListHeader listName= {'🏝️  Holiday tick list'} getData={getData}/>
-      {/* Map sorted tasks to ListItems*/}
-      {sortedTasks?.map((task) => <ListItem  key={task.id} task={task} getData={getData} />)}
+      {/* If not authenticated -> show auth component */}
+      {!authToken && <Auth/>}
+      {/* If user is authorised, see the app content */}    
+      {authToken &&
+        <>
+          {/* listName is a prop */}
+          <ListHeader listName= {'🏝️  Holiday tick list'} getData={getData}/>
+          {/* Map sorted tasks to ListItems*/}
+          {sortedTasks?.map((task) => <ListItem  key={task.id} task={task} getData={getData} />)}
+        </>}
     </div>
   );
 }

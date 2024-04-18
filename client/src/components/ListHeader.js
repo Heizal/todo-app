@@ -1,13 +1,18 @@
 import Modal from "./Modal";
 import { useState } from "react";
+import {useCookies} from 'react-cookie'
 
 // Destructure prop: listName
 const ListHeader = ({listName, getData}) => {
+    const [cookies, setCookie, removeCookie] = useCookies(null)
     const [showModal, setShowModal] = useState(false)
 
     //signOut functional expression
     const signOut = () =>{
       console.log('signout')
+      removeCookie('Email')
+      removeCookie('AuthToken')
+      window.location.reload()
     }
 
 
