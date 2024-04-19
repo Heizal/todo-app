@@ -1,6 +1,6 @@
 # Todo App
 - [Additional Assessment Documentation for SE_09 Cyber Security](https://www.notion.so/SE_09-Cyber-Security-075b690403844bd39f59b62b244fd848?pvs=4)
-- [Additional Assessment Documentation for SE_05 Relational Databases](``)
+- [Additional Assessment Documentation for SE_05 Relational Databases](https://www.notion.so/SE_05-Relational-Databases_HandIn-98a116b02d2d409d98ad681f61b224a3?pvs=4)
 
 ## Description
 
